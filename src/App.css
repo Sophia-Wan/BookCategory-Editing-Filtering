@@ -1,0 +1,54 @@
+.bookdetails {
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+img {
+    width: 100%;
+}
+.listing {
+    align-items: center;
+}
+.details {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+h4 {
+    margin-top: -5px;
+}
+p {
+    padding-bottom: 5px;
+}
+.link {
+    text-align: center;
+    position: relative;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    background-color: rgb(200, 233, 237);
+}
+
+.link:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.container {
+    width: 200px;
+    height: 300px;
+}
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.allContent {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
