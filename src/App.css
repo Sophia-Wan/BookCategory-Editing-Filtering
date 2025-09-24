@@ -3,6 +3,8 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+
+
 }
 img {
     width: 100%;
@@ -51,4 +53,20 @@ p {
 .allContent {
     display: grid;
     grid-template-columns: 1fr auto auto;
+}
+
+.close > span {
+    background: red;
+    padding: 5px;
+    border: .2px solid ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
 }

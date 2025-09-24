@@ -2,9 +2,22 @@ import { useState } from "react";
 import "./App.css";
 
 function App(details) {
+    function remove(exit) {
+        if (exit.target === exit.currentTarget) {
+            return;
+        }
+        if (exit.target.tagName !== "SPAN") {
+            return;
+        }
+        exit.currentTarget.remove();
+    }
+
     return (
-        <div className='container'>
-            <div className='bookdetails'>
+        <div className='container' style={{ position: "relative" }}>
+            <div className='bookdetails' style={{ position: "relative" }} onClick={remove}>
+                <div className="close">
+                    <span>Remove</span>
+                </div>
                 <div className='listings'>
                     <img src={details.img} />
                 </div>
@@ -22,5 +35,6 @@ function App(details) {
         </div>
     );
 }
+
 
 export default App;
