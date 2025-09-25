@@ -3,7 +3,7 @@ function NewForms(){
     return (
         <div className="form-container">
             <form>
-                <h3>ADD BOOK</h3>
+                <h3 className="add-header">ADD BOOK</h3>
                 <div className="form-detail">
                     <label htmlFor="title">Title: </label>
                     <input type="text" name="title" placeholder="Book Title"/>
@@ -22,13 +22,13 @@ function NewForms(){
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Language">Language </label>
-                    <input type="text" name="language" />
+                    <input type="text" name="language" placeholder="Language"/>
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Pages">Pages: </label>
                     <input type="number" name="pages" />
                 </div>
-                <button>Save</button>
+                <button className="save-btn">Save</button>
             </form>
 
         </div>

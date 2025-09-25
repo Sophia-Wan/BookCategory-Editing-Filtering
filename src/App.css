@@ -70,3 +70,7 @@ p {
     top: 0;
     right: 0;
 }
+.bookdetail:focus-within{
+    background-color: grey;
+    cursor: pointer;
+}

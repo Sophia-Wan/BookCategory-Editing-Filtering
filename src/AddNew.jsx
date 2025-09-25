@@ -14,7 +14,7 @@ function New() {
     return (
         <div>
             <Modal btnLabel = "New" btnclassName='new'>
-<newForm />
+<NewForm />
             </Modal>
         </div>
         

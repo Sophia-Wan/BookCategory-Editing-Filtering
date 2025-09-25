@@ -46,12 +46,44 @@ dialog{
     height: 500px;
 }
 
-.form-container{
-    width: 100%;
-}
 
 .form-detail{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 40px;
+}
+
+.save-btn{
+    background: #2e8b57;
+    color:white;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size:1em;
+    margin-left: 230px;
+    
+}
+
+input[type="text"]{
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+   
+   
+}
+
+input[type="number"] {
+   width: 200px;
+    height: 20px;
+    padding: 5px;
+}
+
+.add-header{
+    margin-left: 30px;
+}
+
+.selected{
+    color: grey;
 }

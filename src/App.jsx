@@ -15,6 +15,7 @@ function App(details) {
     return (
         <div className='container' style={{ position: "relative" }}>
             <div className='bookdetails' style={{ position: "relative" }} onClick={remove}>
+                <div className="bookSelected">
                 <div className="close">
                     <span>Remove</span>
                 </div>
@@ -30,6 +31,7 @@ function App(details) {
                         target='_blank'>
                         Learn More
                     </a>
+                    </div>
                 </div>
             </div>
         </div>
