@@ -39,3 +39,19 @@
     display: flex;
     flex-direction: column;
 }
+
+
+dialog{
+    width: 500px;
+    height: 500px;
+}
+
+.form-container{
+    width: 100%;
+}
+
+.form-detail{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}

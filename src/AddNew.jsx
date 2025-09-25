@@ -1,20 +1,25 @@
 import { useRef } from "react";
+import NewForm from "./NewForm";
+import Modal from "./Modal";
+
 function New() {
+    function openModal(e){
+        const dialog = document.querySelector('#my-dialog');
+        dialog.show();
+    }
+    function closeModal(e){
+        const dialog = document.querySelector('#my-dialog');
+        dialog.close();
+    }
     return (
-        <button className='new'>
-            <p className='words'>New</p>
-        </button>
+        <div>
+            <Modal btnLabel = "New" btnclassName='new'>
+<newForm />
+            </Modal>
+        </div>
+        
     );
 }
-function Modal(){
-    return(
-const modalRef = useRef();
 
-function click() {
-    modalRef.current.showModal();
-
-}
-)
-}
 export default New;
 import "./AddNew.css";
