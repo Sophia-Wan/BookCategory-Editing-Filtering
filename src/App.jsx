@@ -2,20 +2,23 @@ import { useState } from "react";
 import "./App.css";
 
 function App(details) {
-    function remove(exit) {
-        if (exit.target === exit.currentTarget) {
+    const [isGray, setIsGray] = useState(false);
+
+    function handleBookdetailsClick(e) {
+        if (e.target.tagName === "SPAN") {
+            e.currentTarget.remove();
             return;
         }
-        if (exit.target.tagName !== "SPAN") {
-            return;
-        }
-        exit.currentTarget.remove();
+        setIsGray((prev) => !prev);
     }
 
     return (
         <div className='container' style={{ position: "relative" }}>
-            <div className='bookdetails' style={{ position: "relative" }} onClick={remove}>
-                <div className="bookSelected">
+            <div
+                className="bookdetails"
+                style={{ position: "relative", background: isGray ? "#e0e0e0" : undefined }}
+                onClick={handleBookdetailsClick}
+            >
                 <div className="close">
                     <span>Remove</span>
                 </div>
@@ -31,7 +34,6 @@ function App(details) {
                         target='_blank'>
                         Learn More
                     </a>
-                    </div>
                 </div>
             </div>
         </div>
