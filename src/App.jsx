@@ -2,21 +2,21 @@ import { useState } from "react";
 import "./App.css";
 
 function App(details) {
-    const [isGray, setIsGray] = useState(false);
+    const [isColour, setIsColour] = useState(false);
 
     function handleBookdetailsClick(e) {
         if (e.target.tagName === "SPAN") {
             e.currentTarget.remove();
             return;
         }
-        setIsGray((prev) => !prev);
+        setIsColour((prev) => !prev);
     }
 
     return (
         <div className='container' style={{ position: "relative" }}>
             <div
                 className="bookdetails"
-                style={{ position: "relative", background: isGray ? "#e0e0e0" : undefined }}
+                style={{ position: "relative", background: isColour ? "#f6e9ffff" : undefined }}
                 onClick={handleBookdetailsClick}
             >
                 <div className="close">
