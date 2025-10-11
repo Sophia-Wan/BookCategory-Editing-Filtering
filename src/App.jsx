@@ -14,28 +14,7 @@ function App(details) {
 
     return (
         <div className='container' style={{ position: "relative" }}>
-            <div
-                className="bookdetails"
-                style={{ position: "relative", background: isColour ? "#f6e9ffff" : undefined }}
-                onClick={handleBookdetailsClick}
-            >
-                <div className="close">
-                    <span>Remove</span>
-                </div>
-                <div className='listings'>
-                    <img src={details.img} />
-                </div>
-                <div className='details'>
-                    <p>${details.price}</p>
-                </div>
-                <div className='link'>
-                    <a
-                        href={details.link}
-                        target='_blank'>
-                        Learn More
-                    </a>
-                </div>
-            </div>
+           
         </div>
     );
 }
