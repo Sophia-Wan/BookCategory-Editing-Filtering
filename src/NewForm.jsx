@@ -1,20 +1,38 @@
-import { useRef } from "react";
-function NewForms(){
+import { nanoid } from "nanoid";
+
+function NewForm({ addBook, closeModal = () => {} }) {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const newBook = {
+            id: nanoid(),
+            title: data.get("title"),
+            author: data.get("author"),
+            publisher: data.get("publisher"),
+            publicationYear: data.get("publication-year"),
+            language: data.get("language"),
+            pages: data.get("pages"),
+        };
+        addBook(newBook);
+        e.target.reset();
+        closeModal();
+    };
+
     return (
         <div className="form-container">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h3 className="add-header">ADD BOOK</h3>
                 <div className="form-detail">
                     <label htmlFor="title">Title: </label>
-                    <input type="text" name="title" placeholder="Book Title"/>
+                    <input type="text" name="title" placeholder="Book Title" />
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Author"> Author </label>
-                    <input type="text" name="author" placeholder="Author"/>
+                    <input type="text" name="author" placeholder="Author" />
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Publisher">Publisher </label>
-                    <input type="text" name="publisher" placeholder="Publisher"/>
+                    <input type="text" name="publisher" placeholder="Publisher" />
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Publication-Year">Publication Year </label>
@@ -22,17 +40,18 @@ function NewForms(){
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Language">Language </label>
-                    <input type="text" name="language" placeholder="Language"/>
+                    <input type="text" name="language" placeholder="Language" />
                 </div>
                 <div className="form-detail">
                     <label htmlFor="Pages">Pages: </label>
                     <input type="number" name="pages" />
                 </div>
-                <button className="save-btn">Save</button>
+                <button className="save-btn" type="submit">
+                    Save
+                </button>
             </form>
-
         </div>
     );
 }
 
-export default NewForms;
+export default NewForm;

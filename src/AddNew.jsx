@@ -1,25 +1,34 @@
-import { useRef } from "react";
+import "./AddNew.css";
 import NewForm from "./NewForm";
 import Modal from "./Modal";
 
-function New() {
-    function openModal(e){
-        const dialog = document.querySelector('#my-dialog');
-        dialog.show();
+function AddNew({ books = [], setBooks, selectedBookId }) {
+    function deleteBook() {
+        if (selectedBookId) {
+            const newBooks = books.filter((b) => b.id !== selectedBookId);
+            setBooks(newBooks);
+        }
     }
-    function closeModal(e){
-        const dialog = document.querySelector('#my-dialog');
-        dialog.close();
+
+    function addBook(newBook) {
+        setBooks([...books, newBook]);
     }
+
     return (
         <div>
-            <Modal btnLabel = "New" btnclassName='new'>
-<NewForm />
-            </Modal>
+            <div className="controls">
+                <Modal btnLabel="New" btnclassName="new">
+                    <NewForm addBook={addBook} />
+                </Modal>
+                <div className="action-row">
+                    <button className="edit">Edit</button>
+                    <button className="btndelete" onClick={deleteBook} disabled={!selectedBookId}>
+                        <span>Delete</span>
+                    </button>
+                </div>
+            </div>
         </div>
-        
     );
 }
 
-export default New;
-import "./AddNew.css";
+export default AddNew;

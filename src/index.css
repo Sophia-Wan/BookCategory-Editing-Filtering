@@ -82,3 +82,24 @@ input[type="number"] {
 .add-header{
     margin-left: 25px;
 }
+
+/* Make cards rendered inside the grid match the .new button size */
+.griding .container {
+    width: 200px;
+    height: 260px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+}
+
+.griding .container .bookdetails {
+    /* ensure inner card fills the container and content is laid out vertically */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+

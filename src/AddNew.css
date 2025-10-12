@@ -1,15 +1,76 @@
 .new {
-      border: 3px solid rgb(220, 202, 219);
+    border: 3px solid rgb(220, 202, 219);
     border-radius: 15px;
     color: rgb(220, 202, 219);
-font-size: 30px;
+    font-size: 30px;
     text-align: center;
     position: relative;
     width: 200px;
+    /* keep the original large size as requested */
     height: 300px;
 }
 .new:hover {
     background-color: rgb(220, 202, 219);
     cursor: pointer;
     color: white;
+}
+ .edit {
+    background: #d3fffd;
+    padding: 0 0.5em;
+    border: 2px solid;
+    border-color: #d3fffd;
+    cursor: pointer;
+    border-radius: 5px; 
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+ }
+
+ .btndelete{
+    background: #ffcccc;
+    padding: 0 0.5em;
+    border: 2px solid;
+    border-color: #ffcccc;
+    border-radius: 5px; 
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+ }
+
+/* the JSX uses className="x" for the delete button - keep a matching rule */
+.x {
+    background: #ffcccc;
+    padding: 0 0.5em;
+    border: 2px solid #ffcccc;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    display: block;
+    position: relative;
+    width: fit-content;
+}
+
+.action-row {
+    /* position the action-row so it visually sits below the large .new button
+         without changing .new's height */
+    position: absolute;
+    top: calc(300px + 8px); /* matches .new height + small gap */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
