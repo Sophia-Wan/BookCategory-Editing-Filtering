@@ -1,29 +1,31 @@
-import { useState } from "react";
 import "./App.css";
 
-function App(details) {
-    const [isColour, setIsColour] = useState(false);
+function App(props) {
+    const { id, image, img, price, author, title, onSelect, selectedBookId } = props;
 
-    function handleBookdetailsClick(e) {
-        // toggle highlight colour when the card is clicked
-        setIsColour((prev) => !prev);
+    const isSelected = selectedBookId === id;
+
+    function handleClick() {
+        if (onSelect) onSelect(id);
     }
+
+    const imgSrc = image || img || "";
 
     return (
         <div className='container' style={{ position: "relative" }}>
             <div
                 className="bookdetails"
-                style={{ position: "relative", background: isColour ? "#f6e9ffff" : undefined }}
-                onClick={handleBookdetailsClick}
+                style={{ position: "relative", background: isSelected ? "#f6e9ffff" : undefined }}
+                onClick={handleClick}
             >
-                {/* removed the Remove button per request */}
+ 
                 <div className='listings'>
-                    <img src={details.img} />
+                    {imgSrc ? <img src={imgSrc} alt={title || "book"} /> : null}
                 </div>
                 <div className='details'>
-                    <p>by:{details.price}</p>
+                    {price !== undefined && <p>${price}</p>}
+                    <p className='author'>by: {author || ""}</p>
                 </div>
-              
             </div>
         </div>
     );

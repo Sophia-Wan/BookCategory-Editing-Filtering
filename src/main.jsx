@@ -10,10 +10,20 @@ function AddNewWrapper() {
 
     return (
         <>
-            <AddNew books={books} setBooks={setBooks} selectedBookId={selectedBookId} />
+            <AddNew
+                books={books}
+                setBooks={setBooks}
+                selectedBookId={selectedBookId}
+                setSelectedBookId={setSelectedBookId}
+            />
             <div className='griding'>
                 {books.map((b) => (
-                    <App key={b.id} img={b.image} price={b.price} link={b.link} title={b.title} author={b.author} />
+                    <App
+                        key={b.id}
+                        {...b}
+                        onSelect={() => setSelectedBookId(b.id)}
+                        selectedBookId={selectedBookId}
+                    />
                 ))}
             </div>
         </>

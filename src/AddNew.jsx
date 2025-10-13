@@ -2,11 +2,13 @@ import "./AddNew.css";
 import NewForm from "./NewForm";
 import Modal from "./Modal";
 
-function AddNew({ books = [], setBooks, selectedBookId }) {
+function AddNew({ books = [], setBooks, selectedBookId, setSelectedBookId }) {
     function deleteBook() {
         if (selectedBookId) {
             const newBooks = books.filter((b) => b.id !== selectedBookId);
             setBooks(newBooks);
+        
+            setSelectedBookId(null);
         }
     }
 
