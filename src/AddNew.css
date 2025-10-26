@@ -42,10 +42,10 @@
  }
 
 
-.x {
-    background: #ffcccc;
+.editbtn {
+    background: #ccf9ff;
     padding: 0 0.5em;
-    border: 2px solid #ffcccc;
+    border: 2px solid #ccf9ff;
     border-radius: 5px;
     width: 200px;
     height: 30px;
@@ -61,8 +61,8 @@
     width: fit-content;
 }
 
-.action-row {
 
+.action-row {
     position: absolute;
     top: calc(300px + 8px); /* matches .new height + small gap */
     left: 50%;

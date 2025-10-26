@@ -6,8 +6,7 @@ function AddNew({ books = [], setBooks, selectedBookId, setSelectedBookId }) {
     function deleteBook() {
         if (selectedBookId) {
             const newBooks = books.filter((b) => b.id !== selectedBookId);
-            setBooks(newBooks);
-        
+            setBooks(updatedBooks);
             setSelectedBookId(null);
         }
     }
@@ -22,16 +21,18 @@ function AddNew({ books = [], setBooks, selectedBookId, setSelectedBookId }) {
         setBooks(updatedBooks);
         setSelectedBookId(null);
     }
-    
+
 const selectedBook = books.find((b) => b.id === selectedBookId);
     return (
         <div>
             <div className="controls">
-                <Modal btnLabel="New" btnclassName="new">
+                <Modal btnLabel="New" btnClassName="new">
                     <NewForm addBook={addBook} />
                 </Modal>
                 <div className="action-row">
-                    <button className="edit">Edit</button>
+                    <Modal btnLabel="Edit" btnClassName="editbtn" disabled={!selectedBookId}>
+                        <NewForm updateBook={updateBook} book={selectedBook} closeModal={() => setSelectedBookId(null)} />
+                    </Modal>
                     <button className="btndelete" onClick={deleteBook} disabled={!selectedBookId}>
                         <span>Delete</span>
                     </button>

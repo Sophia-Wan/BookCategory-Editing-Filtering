@@ -1,6 +1,6 @@
 import { useRef, cloneElement } from "react";
 
-function Modal({ btnLabel, btnclassName, children }) {
+function Modal({ btnLabel, btnClassName, children, disabled }) {
     const modalRef = useRef();
 
     function handleOpen() {
@@ -19,7 +19,7 @@ function Modal({ btnLabel, btnclassName, children }) {
 
     return (
         <>
-            <button className={btnclassName} onClick={handleOpen}>
+            <button className={btnClassName} onClick={handleOpen} disabled={disabled}>
                 {btnLabel}
             </button>
             <dialog ref={modalRef}>{childWithClose}</dialog>
