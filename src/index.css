@@ -37,6 +37,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 
@@ -105,4 +106,14 @@ input[type="number"] {
 .filter{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.filter span {
+    margin-right: 8px;
+}
+
+.filter select {
+    margin-left: 4px;
 }

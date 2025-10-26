@@ -44,22 +44,15 @@ function AddNewWrapper() {
         <>
 
             <div >
+                <h1 className='title'>BOOK CATALOG</h1>
+                <div className='line'> </div>
                 <div>
                     <Filter books={books} onFilterChange={setSelectedAuthor} />
                 </div>
-                <h1 className='title'>BOOK CATALOG</h1>
-                <div className='line'> </div>
             </div>
 
             <div className='allContent'>
                 <div className='books'>
-                    <AddNew
-                        books={books}
-                        setBooks={setBooks}
-                        selectedBookId={selectedBookId}
-                        setSelectedBookId={setSelectedBookId}
-                    />
-
                     <div className='griding'>
                         {filteredBooks.map((b) => (
                             <App
@@ -70,6 +63,14 @@ function AddNewWrapper() {
                             />
                         ))}
                     </div>
+                </div>
+                <div className='controls-section'>
+                    <AddNew
+                        books={books}
+                        setBooks={setBooks}
+                        selectedBookId={selectedBookId}
+                        setSelectedBookId={setSelectedBookId}
+                    />
                 </div>
             </div>
         </>
