@@ -1,11 +1,27 @@
 import { nanoid } from "nanoid";
 
-function NewForm({ addBook, closeModal = () => {} }) {
+function NewForm({ addBook, closeModal, updateBook,book = () => {} }) {
+
+     const isEditing = !book;
+    const initialValues = isEditing
+        ? book
+        : {
+              title: "",
+              author: "",
+              publisher: "",
+              year: "",
+              language: "",
+              pages: "",
+              image: "",
+              price: "",
+              url: "",
+          };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
         const newBook = {
-            id: nanoid(),
+           id: isEditing ? book.id : nanoid(),
             title: data.get("title"),
             author: data.get("author"),
             publisher: data.get("publisher"),
@@ -15,7 +31,11 @@ function NewForm({ addBook, closeModal = () => {} }) {
             pages: data.get("pages"),
         };
 
-        addBook(newBook);
+if(isEditing){
+    updateBook(newBook);
+} else {
+    addBook(newBook);
+}
         e.target.reset();
         closeModal();
     };
@@ -61,7 +81,8 @@ function NewForm({ addBook, closeModal = () => {} }) {
                 </div>
 
                 <button className="save-btn" type="submit">
-                    Save
+                    {isEditing ? "Update" : "Save"}
+        
                 </button>
             </form>
         </div>

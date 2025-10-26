@@ -15,7 +15,15 @@ function AddNew({ books = [], setBooks, selectedBookId, setSelectedBookId }) {
     function addBook(newBook) {
         setBooks([...books, newBook]);
     }
-
+      function updateBook(updatedBook) {
+        const updatedBooks = books.map((b) =>
+            b.id === updatedBook.id ? updatedBook : b
+        );
+        setBooks(updatedBooks);
+        setSelectedBookId(null);
+    }
+    
+const selectedBook = books.find((b) => b.id === selectedBookId);
     return (
         <div>
             <div className="controls">
